@@ -240,6 +240,35 @@
   .area-card h3{font-size:19px;}
   .area-card p{font-size:14.5px;color:var(--ink-soft);}
 
+  /* ABOGADAS */
+  .sobre{background:var(--green-tint);}
+  .sobre-head{margin-bottom:52px;}
+  .abogadas-grid{
+    display:grid;gap:40px;
+    max-width:520px;margin:0 auto;
+  }
+  @media(min-width:600px){.abogadas-grid{grid-template-columns:1fr 1fr;}}
+  .abogada-card{text-align:center;}
+  .abogada-foto{
+    width:148px;height:148px;
+    border-radius:50%;
+    margin:0 auto 20px;
+    background:repeating-linear-gradient(135deg, var(--paper-card), var(--paper-card) 8px, var(--line) 8px, var(--line) 16px);
+    border:2px solid var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow);
+  }
+  .abogada-foto span{
+    font-size:10.5px;font-weight:600;letter-spacing:0.08em;
+    color:var(--ink-faint);text-transform:uppercase;
+  }
+  .abogada-card h3{font-size:19px;}
+  .abogada-card .rol{
+    display:block;margin-top:5px;
+    font-size:12px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;
+  }
+
   /* COMO TRABAJAMOS */
   .proceso-head{text-align:center;max-width:60ch;margin:0 auto;}
   .proceso-head h2{font-size:clamp(28px,3.6vw,40px);}
@@ -306,6 +335,7 @@
     </a>
     <div class="nav-links">
       <a href="#areas">Áreas de práctica</a>
+      <a href="#nosotras">Nosotras</a>
       <a href="#proceso">Cómo trabajamos</a>
       <a href="#contacto">Contacto</a>
     </div>
@@ -316,6 +346,7 @@
   </nav>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#areas">Áreas de práctica</a>
+    <a href="#nosotras">Nosotras</a>
     <a href="#proceso">Cómo trabajamos</a>
     <a href="#contacto">Contacto</a>
     <a href="https://wa.me/5493518762579?text=Hola%2C%20estoy%20necesitando%20asesoramiento%20legal" class="btn btn-gold">Consultar ahora</a>
@@ -408,6 +439,27 @@
     </div>
   </section>
 
+  <!-- ABOGADAS -->
+  <section class="sobre" id="nosotras">
+    <div class="wrap">
+      <div class="sobre-head section-head">
+        <span class="eyebrow">Sobre nosotras</span>
+        <h2>Dos abogadas, un mismo compromiso</h2>
+      </div>
+
+      <div class="abogadas-grid">
+        <div class="abogada-card">
+          <div class="abogada-foto"><span>FOTO</span></div>
+          <h3>Dra. Mónica Tesio</h3>
+          <span class="rol">Abogada</span>
+        </div>
+        <div class="abogada-card">
+          <div class="abogada-foto"><span>FOTO</span></div>
+          <h3>Dra. Victoria Elizalde</h3>
+          <span class="rol">Abogada</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- COMO TRABAJAMOS -->
