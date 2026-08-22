@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.A.T · V.E.R — Estudio Jurídico en Buchardo, Córdoba</title>
+<meta name="description" content="Estudio Jurídico M.A.T · V.E.R en Buchardo, Córdoba. Asesoramiento en derecho de familia, laboral, sucesiones, civil e inmobiliario, salud y sociedades. Atención cercana y personalizada.">
+<meta property="og:title" content="M.A.T · V.E.R — Estudio Jurídico">
+<meta property="og:description" content="Asesoramiento legal claro y cercano en Buchardo, Córdoba.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F4EC;
+    --paper-card:#FFFFFF;
+    --ink:#122019;
+    --ink-soft:#4C574F;
+    --ink-faint:#8B9189;
+    --green:#1F3D33;
+    --green-dark:#152A23;
+    --green-tint:#E7EEE9;
+    --gold:#A9832F;
+    --gold-light:#F0E4C2;
+    --gold-soft:#C9AE72;
+    --line:#DED4B8;
+    --radius-lg:4px;
+    --radius-md:3px;
+    --shadow:0 18px 44px -22px rgba(18,32,25,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Spectral',serif;
+    color:var(--ink);
+    margin:0;
+    font-weight:600;
+    letter-spacing:0.002em;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+  section{padding:96px 0;}
+  @media(max-width:760px){section{padding:60px 0;}}
+
+  .eyebrow{
+    font-family:'Source Sans 3',sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:block;
+    margin-bottom:20px;
+  }
+  .section-head .eyebrow::after{
+    content:"";
+    display:block;
+    width:36px;height:1px;
+    background:var(--gold);
+    margin:14px auto 0;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family:'Source Sans 3',sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    letter-spacing:0.03em;
+    padding:15px 30px;
+    border-radius:var(--radius-md);
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+    white-space:nowrap;
+  }
+  .btn-gold{background:var(--gold);color:#fff;}
+  .btn-gold:hover{background:#8F6E28;transform:translateY(-2px);box-shadow:0 14px 26px -12px rgba(169,131,47,0.55);}
+  .btn-line{background:transparent;color:var(--paper);border-color:rgba(247,244,236,0.4);}
+  .btn-line:hover{border-color:var(--paper);transform:translateY(-2px);}
+  .btn-dark{background:var(--green);color:#fff;}
+  .btn-dark:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 14px 26px -12px rgba(31,61,51,0.5);}
+
+  /* SIGNATURE EMBLEM */
+  .emblem{display:inline-flex;align-items:center;justify-content:center;}
+  .emblem svg{display:block;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--green);
+    border-bottom:1px solid rgba(240,228,194,0.14);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;padding-bottom:18px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-text{
+    font-family:'Spectral',serif;
+    font-weight:600;
+    font-size:16.5px;
+    color:#fff;
+    line-height:1.15;
+  }
+  .brand-text span{
+    display:block;font-family:'Source Sans 3',sans-serif;
+    font-size:9.5px;letter-spacing:0.24em;font-weight:600;
+    color:var(--gold-soft);margin-top:3px;
+  }
+  .nav-links{
+    display:none;align-items:center;gap:36px;
+    font-size:14px;font-weight:500;color:var(--gold-light);
+  }
+  .nav-links a{opacity:0.88;}
+  .nav-links a:hover{opacity:1;color:#fff;}
+  .nav-cta{display:none;}
+  .hamburger{
+    display:flex;flex-direction:column;gap:5px;
+    background:none;border:none;cursor:pointer;padding:8px;
+  }
+  .hamburger span{width:22px;height:1.5px;background:#fff;display:block;}
+  .mobile-menu{
+    display:none;flex-direction:column;gap:2px;
+    background:var(--green-dark);
+    padding:8px 24px 22px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{
+    padding:15px 4px;border-bottom:1px solid rgba(240,228,194,0.14);
+    font-size:15px;font-weight:500;color:var(--gold-light);
+  }
+  .mobile-menu .btn{margin-top:16px;width:100%;}
+
+  @media(min-width:900px){
+    .nav-links{display:flex;}
+    .nav-cta{display:inline-flex;}
+    .hamburger{display:none;}
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--green) 0%, var(--green-dark) 100%);
+    color:#fff;
+    padding:100px 0 84px;
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero-emblem{
+    margin:0 auto 32px;
+    opacity:0.92;
+  }
+  .hero .eyebrow{color:var(--gold-soft);text-align:center;}
+  .hero h1{
+    color:#fff;
+    font-size:clamp(30px,5vw,50px);
+    line-height:1.2;
+    max-width:16ch;
+    margin:0 auto;
+  }
+  .hero h1 em{font-style:normal;color:var(--gold-soft);}
+  .hero-sub{
+    margin:26px auto 0;
+    font-size:17.5px;
+    color:rgba(247,244,236,0.82);
+    max-width:52ch;
+    line-height:1.7;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:38px;}
+  .hero-rule{
+    width:64px;height:1px;background:rgba(240,228,194,0.35);
+    margin:40px auto 0;
+  }
+  .hero-meta{
+    margin-top:22px;
+    font-size:13px;
+    letter-spacing:0.06em;
+    color:rgba(247,244,236,0.55);
+  }
+
+  /* VALUES BAR */
+  .valores{background:var(--paper-card);border-bottom:1px solid var(--line);}
+  .valores .wrap{
+    display:grid;gap:32px;
+    padding-top:52px;padding-bottom:52px;
+  }
+  @media(min-width:760px){.valores .wrap{grid-template-columns:repeat(3,1fr);padding-top:44px;padding-bottom:44px;}}
+  .valor-item{text-align:center;padding:0 12px;}
+  .valor-item h3{font-size:16.5px;margin-bottom:8px;}
+  .valor-item p{font-size:14px;color:var(--ink-soft);}
+
+  /* AREAS */
+  .areas-head{text-align:center;max-width:64ch;margin:0 auto;}
+  .areas-head h2{font-size:clamp(28px,3.6vw,40px);}
+  .areas-head p{margin-top:18px;color:var(--ink-soft);font-size:16.5px;}
+  .areas-grid{
+    margin-top:56px;
+    display:grid;gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media(min-width:700px){.areas-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.areas-grid{grid-template-columns:repeat(3,1fr);}}
+  .area-card{
+    background:var(--paper-card);
+    padding:38px 32px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .area-icon{width:30px;height:30px;color:var(--gold);}
+  .area-card h3{font-size:19px;}
+  .area-card p{font-size:14.5px;color:var(--ink-soft);}
+
+  /* COMO TRABAJAMOS */
+  .proceso-head{text-align:center;max-width:60ch;margin:0 auto;}
+  .proceso-head h2{font-size:clamp(28px,3.6vw,40px);}
+  .proceso-head p{margin-top:18px;color:var(--ink-soft);font-size:16.5px;}
+  .proceso-list{
+    margin-top:56px;
+    display:grid;gap:0;
+  }
+  @media(min-width:860px){.proceso-list{grid-template-columns:repeat(4,1fr);gap:0;}}
+  .proceso-item{
+    padding:28px 26px;
+    border-top:1px solid var(--line);
+    position:relative;
+  }
+  @media(min-width:860px){
+    .proceso-item{border-top:none;border-left:1px solid var(--line);}
+    .proceso-item:first-child{border-left:none;}
+  }
+  .proceso-num{
+    font-family:'Spectral',serif;
+    font-size:15px;font-weight:600;
+    color:var(--gold);
+    margin-bottom:14px;
+  }
+  .proceso-item h3{font-size:17px;margin-bottom:8px;}
+  .proceso-item p{font-size:14px;color:var(--ink-soft);}
+
+  /* CONTACTO */
+  .contacto{background:var(--green);color:#fff;}
+  .contacto-grid{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .contacto-grid > div{max-width:560px;}
+  .contacto-datos{align-items:center;}
+  .dato-item{max-width:420px;}
+  .contacto .eyebrow{color:var(--gold-soft);}
+  .contacto h2{color:#fff;font-size:clamp(28px,3.6vw,38px);max-width:14ch;margin:0 auto;}
+  .contacto-body{margin:18px auto 0;color:rgba(247,244,236,0.78);font-size:16px;max-width:48ch;}
+  .contacto-datos{margin-top:34px;display:flex;flex-direction:column;gap:20px;}
+  .dato-item{display:flex;gap:14px;align-items:flex-start;}
+  .dato-item svg{width:19px;height:19px;color:var(--gold-soft);flex:none;margin-top:2px;}
+  .dato-item .label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:3px;}
+  .dato-item .value{font-size:15.5px;color:#fff;}
+  .contacto-ctas{margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
+
+  /* FOOTER */
+  footer{background:var(--green-dark);color:rgba(247,244,236,0.6);padding:36px 0;}
+  .footer-grid{
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    text-align:center;font-size:13px;
+  }
+  .footer-brand{font-family:'Spectral',serif;color:#fff;font-weight:600;font-size:14.5px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand">
+      <span class="emblem">
+        <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+          <path d="M20 4V36M12 10H28M20 8L11 15M20 8L29 15M11 15L6 24H16L11 15ZM29 15L24 24H34L29 15Z" stroke="#F0E4C2" stroke-width="1.3" stroke-linejoin="round"/>
+          <rect x="14" y="34" width="12" height="2.4" fill="#F0E4C2"/>
+        </svg>
+      </span>
+      <span class="brand-text">M.A.T · V.E.R<span>ESTUDIO JURÍDICO</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#areas">Áreas de práctica</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a href="https://wa.me/5493515518170" class="btn btn-gold nav-cta">Consultar ahora</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#areas">Áreas de práctica</a>
+    <a href="#proceso">Cómo trabajamos</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/5493515518170" class="btn btn-gold">Consultar ahora</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-emblem">
+        <svg width="46" height="46" viewBox="0 0 40 40" fill="none">
+          <path d="M20 4V36M12 10H28M20 8L11 15M20 8L29 15M11 15L6 24H16L11 15ZM29 15L24 24H34L29 15Z" stroke="#C9AE72" stroke-width="1.2" stroke-linejoin="round"/>
+          <rect x="14" y="34" width="12" height="2.2" fill="#C9AE72"/>
+        </svg>
+      </div>
+      <span class="eyebrow">Buchardo, Córdoba</span>
+      <h1>Asesoramiento legal claro, <em>cercano y a tu medida</em></h1>
+      <p class="hero-sub">Somos un estudio jurídico integrado por dos abogadas. Te acompañamos en derecho de familia, laboral, sucesiones, civil e inmobiliario, salud y sociedades, con atención personalizada de principio a fin.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/5493515518170" class="btn btn-gold">Escribinos por WhatsApp</a>
+        <a href="#areas" class="btn btn-line">Ver áreas de práctica</a>
+      </div>
+      <div class="hero-rule"></div>
+      <p class="hero-meta">Av. Manny N.° 80, Buchardo · Lun. a vie. 9 a 12 hs y 16:30 a 19 hs</p>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="valores">
+    <div class="wrap">
+      <div class="valor-item">
+        <h3>Atención personalizada</h3>
+        <p>Cada consulta se atiende de forma directa, sin intermediarios ni respuestas genéricas.</p>
+      </div>
+      <div class="valor-item">
+        <h3>Comunicación clara</h3>
+        <p>Te explicamos cada paso del proceso en términos entendibles, sin tecnicismos innecesarios.</p>
+      </div>
+      <div class="valor-item">
+        <h3>Seguimiento cercano</h3>
+        <p>Acompañamos tu caso de principio a fin, manteniéndote al tanto de cada novedad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section id="areas">
+    <div class="wrap">
+      <div class="areas-head section-head">
+        <span class="eyebrow">Áreas de práctica</span>
+        <h2>En qué te podemos ayudar</h2>
+        <p>Asesoramiento y representación en las áreas del derecho que más consultan nuestros vecinos y vecinas de la zona.</p>
+      </div>
+
+      <div class="areas-grid">
+        <div class="area-card">
+          <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21c-4-2-7-5-7-9V5l7-3 7 3v7c0 4-3 7-7 9Z"/><path d="M9 12h6M12 9v6"/></svg>
+          <h3>Derecho de Familia</h3>
+          <p>Uniones convivenciales, compensación económica, divorcios y régimen de comunicación.</p>
+        </div>
+        <div class="area-card">
+          <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21h16M6 21V9l6-5 6 5v12M10 21v-6h4v6"/></svg>
+          <h3>Derecho Laboral</h3>
+          <p>Reclamos laborales, despidos, indemnizaciones y asesoramiento ante cambios en la normativa vigente.</p>
+        </div>
+        <div class="area-card">
+          <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 4h9l5 5v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/><path d="M15 4v5h5M9 13h6M9 17h6"/></svg>
+          <h3>Contratos en General</h3>
+          <p>Redacción, revisión y asesoramiento en contratos civiles y comerciales.</p>
+        </div>
+        <div class="area-card">
+          <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V11l4-3 4 3v10M13 21V7l4-3 4 3v14"/></svg>
+          <h3>Sociedades</h3>
+          <p>Constitución de sociedades y asesoramiento legal para nuevos emprendimientos comerciales.</p>
+        </div>
+        <div class="area-card">
+          <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v3M12 3 4 7v3c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V7l-8-4Z"/><path d="M9.5 12.5 11 14l3.5-3.5"/></svg>
+          <h3>Derecho Penal Económico</h3>
+          <p>Asesoramiento y defensa en causas vinculadas a delitos económicos y patrimoniales.</p>
+        </div>
+        <div class="area-card">
+          <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 10h18M5 10v9h14v-9M9 21v-6h6v6"/></svg>
+          <h3>Civil y Comercial</h3>
+          <p>Conflictos entre particulares, cobros, daños y perjuicios, y asuntos comerciales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+  <!-- COMO TRABAJAMOS -->
+  <section id="proceso">
+    <div class="wrap">
+      <div class="proceso-head section-head">
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2>De la primera consulta a la resolución</h2>
+        <p>Un proceso simple y ordenado, para que sepas en todo momento en qué etapa está tu caso.</p>
+      </div>
+
+      <div class="proceso-list">
+        <div class="proceso-item">
+          <p class="proceso-num">01</p>
+          <h3>Consulta inicial</h3>
+          <p>Nos contás tu situación y evaluamos juntas cuál es el mejor camino a seguir.</p>
+        </div>
+        <div class="proceso-item">
+          <p class="proceso-num">02</p>
+          <h3>Análisis del caso</h3>
+          <p>Estudiamos la documentación y el contexto legal específico de tu situación.</p>
+        </div>
+        <div class="proceso-item">
+          <p class="proceso-num">03</p>
+          <h3>Plan de acción</h3>
+          <p>Te presentamos las opciones disponibles, en términos claros, para que decidas con información.</p>
+        </div>
+        <div class="proceso-item">
+          <p class="proceso-num">04</p>
+          <h3>Acompañamiento</h3>
+          <p>Te mantenemos al tanto de cada avance hasta la resolución de tu trámite o proceso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="wrap">
+      <div class="contacto-grid">
+        <div>
+          <span class="eyebrow">Contacto</span>
+          <h2>Conversemos sobre tu situación</h2>
+          <p class="contacto-body">Escribinos por WhatsApp o acercate al estudio en nuestro horario de atención. Con gusto te orientamos sobre los próximos pasos.</p>
+
+          <div class="contacto-datos">
+            <div class="dato-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-4.5 7-11a7 7 0 0 0-14 0c0 6.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <div><span class="label">Dirección</span><span class="value">Av. Manny N.° 80, Buchardo, Córdoba</span></div>
+            </div>
+            <div class="dato-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6a2 2 0 0 1 2-2h2.5l1.5 5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 5 1.5V21a2 2 0 0 1-2 2C10.5 23 1 13.5 1 6Z"/></svg>
+              <div><span class="label">Teléfonos</span><span class="value">351 551-8170 · 338 540-0153</span></div>
+            </div>
+            <div class="dato-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+              <div><span class="label">Horario de atención</span><span class="value">Lunes a viernes · 9 a 12 hs y 16:30 a 19 hs</span></div>
+            </div>
+          </div>
+
+          <div class="contacto-ctas">
+            <a href="https://wa.me/5493515518170" class="btn btn-gold">Escribinos por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <span class="footer-brand">M.A.T · V.E.R — Estudio Jurídico</span>
+    <span>Buchardo, Córdoba</span>
+    <span>&copy; 2026 - Todos los derechos reservados</span>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+
+</body>
+</html>
