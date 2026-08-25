@@ -220,14 +220,15 @@
   .valor-item p{font-size:15.5px;color:var(--ink-soft);}
 
   /* DESTACADAS */
-  .destacadas{background:var(--paper-card);border-bottom:1px solid var(--line);}
+  .valores{padding-bottom:36px;}
+  .destacadas{background:var(--paper-card);border-bottom:1px solid var(--line);padding-top:36px;}
   .destacadas-grid{
     margin-top:36px;
     display:grid;gap:14px;
     grid-template-columns:repeat(2,1fr);
   }
-  @media(min-width:700px){.destacadas-grid{grid-template-columns:repeat(3,1fr);}}
-  @media(min-width:1000px){.destacadas-grid{grid-template-columns:repeat(5,1fr);}}
+  @media(min-width:700px){.destacadas-grid{grid-template-columns:repeat(4,1fr);}}
+  .destacada-card:last-child{grid-column:1 / -1;max-width:260px;margin:0 auto;width:100%;}
   .destacada-card{
     background:var(--green);
     color:#fff;
@@ -434,7 +435,7 @@
         <div class="destacada-card"><span>Asesoramiento Empresarial</span></div>
         <div class="destacada-card"><span>Mediación y Negociación</span></div>
         <div class="destacada-card"><span>Asesoramiento Inmobiliario</span></div>
-        <div class="destacada-card"><span>Sucesiones</span></div>
+        <div class="destacada-card"><span>Herencias y Sucesiones</span></div>
         <div class="destacada-card"><span>Multas e Infracciones</span></div>
       </div>
     </div>
