@@ -219,6 +219,33 @@
   .valor-item h3{font-size:18.5px;margin-bottom:9px;}
   .valor-item p{font-size:15.5px;color:var(--ink-soft);}
 
+  /* DESTACADAS */
+  .destacadas{background:var(--paper-card);border-bottom:1px solid var(--line);}
+  .destacadas-grid{
+    margin-top:36px;
+    display:grid;gap:14px;
+    grid-template-columns:repeat(2,1fr);
+  }
+  @media(min-width:700px){.destacadas-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(min-width:1000px){.destacadas-grid{grid-template-columns:repeat(5,1fr);}}
+  .destacada-card{
+    background:var(--green);
+    color:#fff;
+    border:1px solid var(--gold);
+    border-radius:6px;
+    padding:22px 16px;
+    text-align:center;
+    display:flex;align-items:center;justify-content:center;
+    min-height:88px;
+  }
+  .destacada-card span{
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    line-height:1.35;
+  }
+
   /* AREAS */
   .areas-head{text-align:center;max-width:64ch;margin:0 auto;}
   .areas-head h2{font-size:clamp(28px,3.6vw,40px);}
@@ -368,7 +395,7 @@
       </div>
       <span class="eyebrow">Buchardo, Córdoba</span>
       <h1>Asesoramiento legal claro, <em>cercano y a tu medida</em></h1>
-      <p class="hero-sub">Somos un estudio jurídico integrado por dos abogadas. Te acompañamos en derecho de familia, laboral, sucesiones, civil e inmobiliario, salud y sociedades, con atención personalizada de principio a fin.</p>
+      <p class="hero-sub">Somos un estudio jurídico integrado por dos abogadas. Contamos con posibilidades de representar a clientes en toda la Provincia de Córdoba como así también el trabajo interdisciplinario con otros estudios jurídicos y del mismo modo abarcamos asesoramiento a clientes de otras provincias del país.</p>
       <div class="hero-ctas">
         <a href="https://wa.me/5493518762579?text=Hola%2C%20estoy%20necesitando%20asesoramiento%20legal" class="btn btn-gold">Escribinos por WhatsApp</a>
         <a href="#areas" class="btn btn-line">Ver áreas de práctica</a>
@@ -400,6 +427,19 @@
     </div>
   </section>
 
+  <!-- DESTACADAS -->
+  <section class="destacadas">
+    <div class="wrap">
+      <div class="destacadas-grid">
+        <div class="destacada-card"><span>Asesoramiento Empresarial</span></div>
+        <div class="destacada-card"><span>Mediación y Negociación</span></div>
+        <div class="destacada-card"><span>Asesoramiento Inmobiliario</span></div>
+        <div class="destacada-card"><span>Sucesiones</span></div>
+        <div class="destacada-card"><span>Multas e Infracciones</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- AREAS -->
   <section id="areas">
     <div class="wrap">
@@ -413,7 +453,7 @@
         <div class="area-card">
           <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21c-4-2-7-5-7-9V5l7-3 7 3v7c0 4-3 7-7 9Z"/><path d="M9 12h6M12 9v6"/></svg>
           <h3>Derecho de Familia</h3>
-          <p>Uniones convivenciales, compensación económica, divorcios y régimen de comunicación.</p>
+          <p>Cuota alimentaria, uniones convivenciales, compensación económica, divorcios y régimen de comunicación.</p>
         </div>
         <div class="area-card">
           <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21h16M6 21V9l6-5 6 5v12M10 21v-6h4v6"/></svg>
