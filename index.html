@@ -220,10 +220,10 @@
   .valor-item p{font-size:15.5px;color:var(--ink-soft);}
 
   /* DESTACADAS */
-  .valores{padding-bottom:36px;}
-  .destacadas{background:var(--paper-card);border-bottom:1px solid var(--line);padding-top:36px;}
+  .valores{padding-bottom:17px;}
+  .destacadas{background:var(--paper-card);border-bottom:1px solid var(--line);padding-top:36px;padding-bottom:56px;}
   .destacadas-grid{
-    margin-top:36px;
+    margin-top:0;
     display:flex;flex-wrap:wrap;justify-content:center;gap:14px;
   }
   .destacada-card{
@@ -363,6 +363,33 @@
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important; scroll-behavior:auto !important;}
   }
+
+  /* OCTUBRE ROSA */
+  .octubre-rosa{padding:40px 0;}
+  @media(max-width:760px){.octubre-rosa{padding:32px 0;}.destacadas{padding-top:38px;padding-bottom:44px;}}
+  .octubre-rosa{background:var(--paper);text-align:center;}
+  .or-btn{display:inline-flex;align-items:center;gap:14px;padding:18px 34px;border:none;cursor:pointer;
+    background:linear-gradient(135deg,#E8789E,#C94A78);color:#fff;border-radius:999px;
+    font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;letter-spacing:.3px;
+    box-shadow:0 14px 34px -14px rgba(201,74,120,.7);transition:transform .2s,box-shadow .2s;}
+  .or-btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -14px rgba(201,74,120,.85);}
+  .or-btn svg{width:26px;height:26px;flex-shrink:0;}
+  .or-sub{margin-top:14px;color:var(--ink-soft);font-size:14.5px;}
+  .or-modal{position:fixed;inset:0;background:rgba(18,32,25,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:1000;}
+  .or-modal.open{display:flex;}
+  .or-box{background:#fff;width:100%;max-width:440px;border-radius:14px;padding:30px 26px;position:relative;
+    border-top:6px solid #D85C88;box-shadow:var(--shadow);text-align:left;max-height:92vh;overflow:auto;}
+  .or-box h3{font-family:'Spectral',serif;font-size:24px;color:var(--ink);margin:0 0 6px;}
+  .or-box p.or-intro{color:var(--ink-soft);font-size:14.5px;margin:0 0 18px;}
+  .or-close{position:absolute;top:10px;right:12px;background:none;border:none;font-size:28px;line-height:1;cursor:pointer;color:var(--ink-faint);}
+  .or-box label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin:12px 0 5px;}
+  .or-box input,.or-box textarea{width:100%;box-sizing:border-box;padding:11px 12px;border:1px solid var(--line);border-radius:8px;
+    font-family:'Source Sans 3',sans-serif;font-size:15px;color:var(--ink);background:#FFFCFD;}
+  .or-box input:focus,.or-box textarea:focus{outline:none;border-color:#D85C88;box-shadow:0 0 0 3px rgba(216,92,136,.18);}
+  .or-box textarea{min-height:110px;resize:vertical;}
+  .or-send{margin-top:18px;width:100%;padding:14px;border:none;border-radius:999px;cursor:pointer;
+    background:linear-gradient(135deg,#E8789E,#C94A78);color:#fff;font-size:16px;font-weight:600;font-family:'Source Sans 3',sans-serif;}
+  .or-send:hover{filter:brightness(1.05);}
 </style>
 </head>
 <body>
@@ -434,6 +461,31 @@
       </div>
     </div>
   </section>
+
+  <!-- OCTUBRE ROSA -->
+  <section class="octubre-rosa">
+    <div class="wrap">
+      <button type="button" class="or-btn" id="orOpen"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-2 0-3.5 1.6-3.5 3.6 0 2.4 2 5 3.5 7.4 1.5-2.4 3.5-5 3.5-7.4C15.5 4.6 14 3 12 3z"/><path d="M10 11.5 5.5 21l3-1 1.5 2.5L13.8 14"/><path d="M14 11.5 18.5 21l-3-1-1.5 2.5L10.2 14"/></svg>Octubre Rosa · Dejanos tu reseña</button>
+      <p class="or-sub">Sumate a la campaña de concientización sobre el cáncer de mama.</p>
+    </div>
+  </section>
+
+  <div class="or-modal" id="orModal" role="dialog" aria-modal="true" aria-labelledby="orTitle">
+    <div class="or-box">
+      <button type="button" class="or-close" id="orClose" aria-label="Cerrar">&times;</button>
+      <h3 id="orTitle">Octubre Rosa</h3>
+      <p class="or-intro">Completá tus datos y dejanos tu reseña. Se enviará por WhatsApp al estudio.</p>
+      <form id="orForm">
+        <label for="orNombre">Nombre y apellido</label>
+        <input id="orNombre" type="text" required autocomplete="name">
+        <label for="orTel">Teléfono</label>
+        <input id="orTel" type="tel" required autocomplete="tel">
+        <label for="orResena">Reseña</label>
+        <textarea id="orResena" required></textarea>
+        <button type="submit" class="or-send">Enviar reseña</button>
+      </form>
+    </div>
+  </div>
 
   <!-- DESTACADAS -->
   <section class="destacadas">
@@ -620,5 +672,24 @@
   }));
 </script>
 
+<script>
+(function(){
+  var m=document.getElementById('orModal'),f=document.getElementById('orForm');
+  function open(){m.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('orNombre').focus();},50);}
+  function close(){m.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('orOpen').addEventListener('click',open);
+  document.getElementById('orClose').addEventListener('click',close);
+  m.addEventListener('click',function(e){if(e.target===m)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var t='Octubre Rosa - Reseña\n\nNombre y apellido: '+document.getElementById('orNombre').value.trim()+
+      '\nTeléfono: '+document.getElementById('orTel').value.trim()+
+      '\nReseña: '+document.getElementById('orResena').value.trim();
+    window.open('https://wa.me/5493515518170?text='+encodeURIComponent(t),'_blank');
+    f.reset();close();
+  });
+})();
+</script>
 </body>
 </html>
