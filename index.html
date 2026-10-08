@@ -390,6 +390,8 @@
   .or-send{margin-top:18px;width:100%;padding:14px;border:none;border-radius:999px;cursor:pointer;
     background:linear-gradient(135deg,#E8789E,#C94A78);color:#fff;font-size:16px;font-weight:600;font-family:'Source Sans 3',sans-serif;}
   .or-send:hover{filter:brightness(1.05);}
+  .or-send:disabled{opacity:.7;cursor:wait;}
+  .or-msg{margin:12px 0 0;text-align:center;font-size:14.5px;font-weight:600;min-height:1em;}
 </style>
 </head>
 <body>
@@ -474,7 +476,7 @@
     <div class="or-box">
       <button type="button" class="or-close" id="orClose" aria-label="Cerrar">&times;</button>
       <h3 id="orTitle">Octubre Rosa</h3>
-      <p class="or-intro">Completá tus datos y dejanos tu reseña. Se enviará por WhatsApp al estudio.</p>
+      <p class="or-intro">Completá tus datos y dejanos tu reseña. La recibirá directamente el estudio.</p>
       <form id="orForm">
         <label for="orNombre">Nombre y apellido</label>
         <input id="orNombre" type="text" required autocomplete="name">
@@ -483,6 +485,7 @@
         <label for="orResena">Reseña</label>
         <textarea id="orResena" required></textarea>
         <button type="submit" class="or-send">Enviar reseña</button>
+        <p id="orMsg" class="or-msg" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -681,13 +684,25 @@
   document.getElementById('orClose').addEventListener('click',close);
   m.addEventListener('click',function(e){if(e.target===m)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
+  var btn=f.querySelector('.or-send'),msg=document.getElementById('orMsg');
   f.addEventListener('submit',function(e){
     e.preventDefault();
-    var t='Octubre Rosa - Reseña\n\nNombre y apellido: '+document.getElementById('orNombre').value.trim()+
-      '\nTeléfono: '+document.getElementById('orTel').value.trim()+
-      '\nReseña: '+document.getElementById('orResena').value.trim();
-    window.open('https://wa.me/5493515518170?text='+encodeURIComponent(t),'_blank');
-    f.reset();close();
+    btn.disabled=true;btn.textContent='Enviando...';msg.textContent='';
+    fetch('https://formsubmit.co/ajax/estudiojuridicomatver@gmail.com',{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:'Nueva reseña Octubre Rosa - Sitio web',_template:'table',_captcha:'false',
+        'Nombre y apellido':document.getElementById('orNombre').value.trim(),
+        'Teléfono':document.getElementById('orTel').value.trim(),
+        'Reseña':document.getElementById('orResena').value.trim()
+      })
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.success==='false'||d.success===false)throw 0;
+      f.reset();msg.style.color='#1F3D33';msg.textContent='¡Gracias! Tu reseña fue enviada.';
+      setTimeout(function(){close();msg.textContent='';},2500);
+    }).catch(function(){
+      msg.style.color='#B3261E';msg.textContent='No se pudo enviar. Intentá de nuevo en unos minutos.';
+    }).finally(function(){btn.disabled=false;btn.textContent='Enviar reseña';});
   });
 })();
 </script>
