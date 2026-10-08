@@ -697,10 +697,16 @@
         'Reseña':document.getElementById('orResena').value.trim()
       })
     }).then(function(r){return r.json();}).then(function(d){
-      if(d.success==='false'||d.success===false)throw 0;
+      var ok=d.success===true||d.success==='true';
+      var txt=(d.message||'')+'';
+      if(!ok&&/activat/i.test(txt)){
+        msg.style.color='#8A5A00';msg.textContent='Formulario pendiente de activación: revisá el mail del estudio y tocá "Activate Form".';return;
+      }
+      if(!ok){console.warn('FormSubmit:',d);throw new Error(txt);}
       f.reset();msg.style.color='#1F3D33';msg.textContent='¡Gracias! Tu reseña fue enviada.';
       setTimeout(function(){close();msg.textContent='';},2500);
-    }).catch(function(){
+    }).catch(function(err){
+      console.warn('Error al enviar reseña:',err);
       msg.style.color='#B3261E';msg.textContent='No se pudo enviar. Intentá de nuevo en unos minutos.';
     }).finally(function(){btn.disabled=false;btn.textContent='Enviar reseña';});
   });
